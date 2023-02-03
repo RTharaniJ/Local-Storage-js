@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <h1>JavaScript localStorage demo</h1>
+    <textarea id="myTextarea" rows="10" cols="80"></textarea>
+    <div style="display: flex;">
+      <p>hello  <div>World</div> </p> 
+    </div>
+    
+
+   
+    <button onclick="mySave()">Save</button>
+    <button onclick="myLoad()">Load</button>
+    <button onclick="mytextClear()">Clear</button>
+    <script>
+      function mySave() {
+
+        var myContent = document.getElementById("myTextarea").value;
+        localStorage.setItem("myContent", myContent);
+      }
+      function myLoad() {
+        var myContent = localStorage.getItem("myContent");
+        document.getElementById("myTextarea").value = myContent;
+      }
+      function mytextClear() {
+        var myContent = localStorage.clear("myContent");
+        document.getElementById("myTextarea").value = myContent;
+      }
+    </script>
+  </body>
+</html>
